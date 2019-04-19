@@ -13,7 +13,7 @@ import Offers from './pages/Offers';
 import reducer from './reducers/rootReducer';
 
 const client = axios.create({
-  baseURL: 'https://api.evocai.com',
+  baseURL: 'https://api.test.com',
   responseType: 'json'
 });
 
