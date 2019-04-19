@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStore, applyMiddleware } from 'redux';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
@@ -18,15 +18,6 @@ const client = axios.create({
 });
 
 const store = createStore(reducer, applyMiddleware(axiosMiddleware(client)));
-
-const getTabBarIcon = (navigation, focused, tintColor) => {
-
-
-  // You can return any component that you like here!
-  return (
-    <Ionicons name={iconName} size={25} color={tintColor} />
-  );
-};
 
 const Navigation = createAppContainer(
   createBottomTabNavigator(
@@ -60,7 +51,7 @@ const Navigation = createAppContainer(
   )
 );
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <Provider store={store}>
@@ -76,3 +67,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   }
 });
+
+export default App;
