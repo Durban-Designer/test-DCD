@@ -4,10 +4,10 @@ const initialState = {
 export default function(state = initialState, action) {
   switch (action.type) {
     case "updateTitle":
-      alert(action.payload); // alerts with correct data
+      alert(action.payload);
       return {
         ...state,
-        title: action.payload // same data but state neveer updates
+        title: action.payload
       };
     default:
       return state;

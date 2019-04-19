@@ -5,7 +5,7 @@ import { Button } from 'react-native-material-ui';
 import { updateTitle } from '../actions/testController';
 
 function mapStateToProps(state) {
-  alert('props updating from state', state); // never fires when button is pressed
+  alert('props updating from state', state);
   return {
     title: state.testReducer.title
   };
@@ -13,25 +13,22 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    updateTitle: data => {
-      alert('action is dispatched', data); // fires on button press
-      dispatch(updateTitle(data)) // action is dispatched
-    }
+    updateTitle: data => dispatch(updateTitle(data))
   };
 }
 
 class Home extends Component {
   componentWillReceiveProps(NextProps) {
-    alert('componentWillReceiveProps', NextProps); // never fires
+    alert('componentWillReceiveProps', NextProps);
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>{this.props.title}</Text> // never updates with new state from reducer
+        <Text style={styles.text}>{this.props.title}</Text>
         <Button primary text="Press Me" onPress={() => {
-          this.props.updateTitle('Home Updates Successfully'); // Dispatch action
-          alert(this.props.title); // alert new state
+          this.props.updateTitle('Home Updates Successfully');
+          alert(this.props.title);
         }}/>
       </View>
     );
