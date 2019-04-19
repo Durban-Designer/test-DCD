@@ -1,10 +1,9 @@
 const initialState = {
-  title: 'hello home'
+  title: 'Home'
 }
 export default function(state = initialState, action) {
   switch (action.type) {
     case "updateTitle":
-      alert(action.payload);
       return {
         ...state,
         title: action.payload
