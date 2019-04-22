@@ -18,6 +18,5 @@ yarn start
 ```
 
 ### Warning
-```
-Do Not change package.json, newest react-redux usues hooks which React Native doesn't support
-```
+
+> Do Not change package.json, newest react-redux usues hooks which React Native doesn't support
